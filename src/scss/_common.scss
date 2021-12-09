@@ -1,0 +1,396 @@
+/********* COMMON STYLES *********/
+// text initialization
+a, p, h1, h2, h3, h4, h5, h6, blockquote {
+  font-size: $basic;
+}
+// E N V I R O N M E N T
+html {
+  font-size: $basic;
+}
+body {
+  background: $color-bg $bgimg;
+  font-family: $font-regular;
+  color: $color-main;
+  box-sizing: border-box;
+  @media print {
+    background: transparent;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-regular;
+  color: $color-main;
+  font-weight: bold;
+  line-height: 2em;
+}
+h2, h3 {
+  color: $color-light;
+}
+h4, h5, h6 {
+  font-family: $font-regular;
+  color: $color-dark;
+}
+h1 {
+  font-size: $basic * 2;
+  color: green;
+}
+h2 {
+  font-size: $basic * 1.75;
+}
+h3 {
+  font-size: $basic * 1.5;
+}
+h4 {
+  font-size: $basic * 1.25;
+}
+h5 {
+  font-size: $basic * 1.125;
+}
+h6 {
+  font-size: $basic;
+}
+p {
+  text-align: left;
+  line-height: 1;
+}
+blockquote {
+  color: $color-light;
+  margin: $basic $basic * 3;
+  padding: math.div($basic, 2) math.div($basic, 2) math.div($basic, 2) $basic;
+  border-left: math.div($basic, 4) solid $color-light;
+	font-style: italic;
+	border-radius: 0 $basic $basic 0;
+}
+a {
+  text-indent: 0;
+  color: $color-light;
+  text-decoration: none;
+  &:hover {
+    color: $color-contrast;
+  }
+}
+section {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+select {
+  display: block;
+  margin: 1mm;
+  height: 8mm;
+  font-size: 4mm;
+  //padding: 1mm;
+  //line-height: 6mm;
+  color: $color-main;
+}
+//-----------------------
+.button-inline {
+  display: inline-block; // 2 lines - changing a type of an element...
+  vertical-align: baseline;   // ...from inline to inline-block.
+  height: $line-h; //vertical size of the block.
+  padding: 0 1em; //horizontal size - adding an extra space on edges.
+  line-height: $line-h; //vertical align of the text.
+  margin: 0 math.div($line-h, 2); //horizontal spaces in text block.
+  // And now decorating
+  background: $gradient-bg;
+  font-size: $basic;
+  font-family: $sans-serif;
+  color: $color-dark;
+  text-decoration: none;
+  border-radius: .5rem;
+  border: 1px solid white;
+  box-shadow: 0 0 .1rem $color-neutral;
+  &:hover {
+    background: $gradient-main;
+    color: white;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    //left: 1px;
+    background: linear-gradient(to bottom, darken($color-light, 10%), lighten($color-main, 5%) 48%, $color-main 52%, $color-dark);
+    //box-shadow: -1px -1px .1rem $color-neutral;
+    border-right-color: $color-bg;
+    border-bottom-color: $color-bg;
+  }
+}
+.button {
+  display: inline-block;
+  vertical-align: top;
+  margin: math.div($basic, 4);
+  background-color: rgba(233,234,236,.3);
+  color: $color-main;
+  padding: 0 $basic;
+  border-radius: math.div($basic, 4);
+  border: 1px solid $color-neutral;
+  line-height: $basic * 2;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1);
+  transition: background-color .2s;
+  &:hover {
+    background-color: lighten($color-neutral, 10%);
+    box-shadow: 0 4px 6px rgba(0,0,0,.2);
+  }
+  &:active {
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    background-color: darken($color-neutral, 10%);
+  }
+}
+.btn-primary {
+  background-color: rgb(31,57,72);
+  color: $color-bg;
+  box-shadow: 0 4px 4px rgba(31,57,72,.2);
+  border-color: $color-dark;
+  &:hover {
+    background-color: $color-light;
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(18,126,155,.4);
+  }
+  &:active {
+    background-color: darken($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(18,126,155,.4);
+  }
+}
+.btn-danger {
+  background-color: rgba(153,0,0,.3);
+  color: $color-contrast;
+  border-color: $color-contrast;
+  box-shadow: 0 4px 4px rgba(153,0,0,.2);
+  &:hover {
+    background-color: lighten($color-contrast, 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(153,0,0,.4);
+  }
+  &:active {
+    background-color: darken($color-contrast, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(153,0,0,.4);
+  }
+}
+.btn-info {
+  background-color: rgba(18,126,155,.3);
+  color: $color-light;
+  border-color: $color-light;
+  box-shadow: 0 4px 4px rgba(18,126,155,.2);
+  cursor: help;
+  &:hover {
+    background-color: lighten($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(18,126,155,.4);
+  }
+  &:active {
+    background-color: darken($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(18,126,155,.4);
+  }
+}
+.btn-success {
+  background-color: rgba(0,132,15,.3);
+  color: rgb(0,132,15);
+  border-color: rgb(0,132,15);
+  box-shadow: 0 4px 4px rgba(0,132,15,.2);
+  &:hover {
+    background-color: lighten(rgb(0,132,15), 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(0,132,15,.4);
+  }
+  &:active {
+    background-color: darken(rgb(0,132,15), 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(0,132,15,.4);
+  }
+}
+.btn-attention {
+  background-color: rgba(220,140,0,.3);
+  color: rgb(220,140,0);
+  border-color: rgb(220,140,0);
+  box-shadow: 0 4px 4px rgba(220,140,0,.2);
+  &:hover {
+    background-color: lighten(rgb(220,140,0), 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(220,140,0,.4);
+  }
+  &:active {
+    background-color: darken(rgb(220,140,0), 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(220,140,0,.4);
+  }
+}
+.btn-disabled {
+  background-color: rgba(233,234,236,.5);
+  color: $color-neutral;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1);
+  cursor: not-allowed;
+  &:hover, &:active {
+    background-color: rgba(233,234,236,.5);
+    color: $color-neutral;
+    box-shadow: 0 4px 4px rgba(0,0,0,.1);
+    cursor: not-allowed;
+  }
+}
+img {
+  width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+}
+.img-article {
+  width: calc(100% - 24px);
+  margin: math.div($basic, 4) * 3;
+}
+.thumb {
+  width: calc(100% - 24px);
+  margin: math.div($basic, 2);
+  border-width: math.div($basic, 2);
+  border-style: solid;
+  border-color: white;
+  box-shadow: 0 0 math.div($basic, 2) rgba(0,0,0,.3);
+}
+.thumb-320 {
+  width: 288px;
+}
+.primary {
+  background-color: rgb(31,57,72);
+  color: $color-bg;
+  box-shadow: 0 4px 4px rgba(31,57,72,.2);
+  border-color: $color-dark;
+}
+.danger {
+  background-color: rgba(153,0,0,.3);
+  color: $color-contrast;
+  border-color: $color-contrast;
+  box-shadow: 0 4px 4px rgba(153,0,0,.2);
+}
+.info {
+  background-color: rgba(18,126,155,.3);
+  color: $color-light;
+  border-color: $color-light;
+  box-shadow: 0 4px 4px rgba(18,126,155,.2);
+	text-decoration: none;
+  //cursor: help;
+}
+.success {
+  background-color: rgba(0,132,15,.3);
+  color: rgb(0,132,15);
+  border-color: rgb(0,132,15);
+  box-shadow: 0 4px 4px rgba(0,132,15,.2);
+	text-decoration: line-through;
+}
+.attention {
+  background-color: rgba(220,140,0,.3);
+  color: rgb(220,140,0);
+  border-color: rgb(220,140,0);
+  box-shadow: 0 4px 4px rgba(220,140,0,.2);
+}
+.disabled {
+  background-color: rgba(233,234,236,.5);
+  color: $color-neutral;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1);
+  cursor: not-allowed;
+}
+.container {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  @media screen and (min-width: 721px) and (max-width: 960px) {
+    width: 690px;
+  }
+  @media screen and (min-width: 961px) and (max-width: 1280px) {
+    width: 930px;
+  }
+  @media screen and (min-width: 1281px) and (max-width: 1920px) {
+    width: 1250px;
+  }
+  @media screen and (min-width: 1920px) {
+    width: 1880px;
+  }
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+input {
+	height: 32px;
+	margin:0;
+	padding: 0;
+	line-height: 32px;
+	font-size: $basic;
+	&[type=text] {
+		border-radius: 5px;
+		border: 1px solid $color-main;
+		margin: 10px 0 10px 10px;
+		width: 510px;
+		text-indent: .5em;
+	}
+}
+button {
+	margin: 10px 5px !important;
+}
+#wrapper {
+	width: 100%;
+	height: 100vh;
+}
+#canvas {
+	width: 600px;
+	margin: 0 auto;
+	padding: 10px;
+}
+.item {
+	position: relative;
+	animation: adding .3s ease-out;
+  margin: $basic;
+  padding: math.div($basic, 2);
+  border-left: math.div($basic, 4) solid;
+  font-style: italic;
+	border-radius: 0 19px 19px 0;
+}
+.submenu {
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	right: 7px;
+	top: 7px;
+	border-radius: 14px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	color: inherit;
+	border-color: inherit;
+	background-color: transparent;
+	box-shadow: none;
+	cursor: pointer;
+	&:hover {
+		border-color: white;
+	}
+}
+.delete>i {
+	font-size: 20px;
+	line-height: 28px;
+}
+.item>i {
+	font-size: 20px;
+	line-height: 28px;
+	margin: 0 16px 0 0;
+}
+
+@keyframes adding {
+	from {
+		opacity: 0;
+		transform: translateY(-40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.deletion {
+	animation: removal 1s;
+}
+@keyframes removal {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+}

@@ -1,0 +1,14 @@
+#mainlogo {
+  fill: #005f4e
+}
+.undefined #mainlogo {
+  fill: #4b4b4b
+}
+.nocertOld #mainlogo {
+  fill: #f5f5f5
+}
+.cepath,
+.eacpath,
+.umegalogo {
+  fill: #f5f5f5
+}
