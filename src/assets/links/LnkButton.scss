@@ -60,7 +60,7 @@
     color: $color-light;
     border-color: $color-light;
     box-shadow: 0 4px 4px rgba(18,126,155,.2);
-    cursor: help;
+    //cursor: help;
     &:hover {
       background-color: lighten($color-light, 10%);
       color: $color-bg;

@@ -5,7 +5,6 @@ const LnkButton = (props) => {
 
     function getClassName () {
         let styleName = 'button ';
-        console.log(props.lnkType);
         switch (props.lnkType) {
             case 'danger': 
                 styleName += 'btn-danger';
