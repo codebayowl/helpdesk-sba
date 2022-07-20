@@ -1,13 +1,24 @@
 /*********** SVG STYLES ************/
-#mainlogo {
-  fill: #005f4e;
+
+$animata: 7s infinite;
+$length: 11200;
+
+.loaderLogo {
+  fill: none;
+	stroke: #00BAB3;
+	stroke-width: 30;
+	stroke-dasharray: $length;
+	opacity: 1;
+	animation: rounding $animata;
 }
-.undefined #mainlogo {
-  fill: #4b4b4b;
-}
-.nocertOld #mainlogo {
-  fill: whitesmoke;
-}
-.utlogo, .cepath, .eacpath {
-  fill: whitesmoke;
+@keyframes rounding {
+	0% {		
+		stroke-dashoffset: $length;
+	}
+	50% {		
+		stroke-dashoffset: 0;
+  }
+	100% {
+		stroke-dashoffset: $length * 2;
+	}
 }

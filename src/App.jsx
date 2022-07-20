@@ -1,12 +1,15 @@
 import './assets/svg.scss';
 import LnkButton from "./assets/links/LnkButton";
 import MsgBlock from "./assets/blocks/MsgBlock";
+import Loader from './components/Loader';
 
 function App() {
+  let stillLoading = true;
   return (
-    <div className="App">
+    <div className="App"> 
       <LnkButton lnkAddr="#" lnkText="Link like a button" lnkType="success" />
-      <MsgBlock type="danger"/>
+      <MsgBlock type="danger"/> 
+      <Loader /> 
     </div>
   );
 }
