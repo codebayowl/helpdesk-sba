@@ -1,0 +1,28 @@
+/********** VARIABLES AND MIXINS ***********/
+// sizes
+$basic: 16px;
+
+// colors
+$color-main: #1f3948;
+$color-light: #127e9b;
+$color-dark: #002a35;
+$color-bg: #e9eaec;
+$color-neutral: #c2c3c4;
+$color-contrast: #900;
+$gradient-main: linear-gradient(to bottom, $color-light, lighten($color-main, 10%) 48%, lighten($color-main, 5%) 52%, $color-dark);
+$gradient-bg: linear-gradient(to bottom, $color-bg 0%, lighten($color-light, 10%) 100%);
+$bgimg: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAKCAMAAABL52QCAAAABlBMVEXCw8Tp6uwFw7MwAAAAF0lEQVR4AWNgYAQCCMEAIoAQgkA8/LIABOwAKWIaZEkAAAAASUVORK5CYII=);///////////////////////////////////
+
+// typography
+$font-heading: 'Cormorant Infant', serif;
+$font-regular: 'Roboto', sans-serif;
+$font-monospace: 'Ubuntu Mono', monospace;
+$font-size: $basic;
+$sans-serif: 'Segoe UI', Segoe, Arial, Verdana, sans-serif;
+$serif: "Times New Roman", Times, Georgia, serif;
+$line-h: $font-size * 1.5;
+
+//other
+$test: 1px dotted $color-contrast;
+
+/* MIXINS */
