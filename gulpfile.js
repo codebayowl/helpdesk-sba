@@ -14,7 +14,7 @@ const uglifycss = require('gulp-uglifycss'); // connecting standalone node.js mo
 
 function browsersync() {
     browserSync.init({
-        server: {baseDir: 'preprod/'},
+        server: {baseDir: 'src/static_template/preprod/'},
         notify: false,
         online: true // change to false if working offline (browsercync won't start otherwise)
     })
@@ -22,19 +22,19 @@ function browsersync() {
 
 function compilePug() {
     return src([
-        'src/pug/*.pug',
-        '!src/pug/_*.pug'
+        'src/static_template/src/pug/*.pug',
+        '!src/static_template/src/pug/_*.pug'
     ])
     .pipe(pug())
     //.pipe(concat('index.html'))
-    .pipe(dest('preprod/'))
+    .pipe(dest('src/static_template/preprod/'))
     .pipe(browserSync.stream()) // adding watching w/o hard reload of page
 }
 
 function styles() {
     return src([
-        'src/scss/*.scss',
-        '!src/scss/_*.scss'
+        'src/static_template/src/scss/*.scss',
+        '!src/static_template/src/scss/_*.scss'
     ])
     .pipe(scss())
     .pipe(vendorize({ 
@@ -43,65 +43,65 @@ function styles() {
     })) // adding autoprefixes for old browsers
     .pipe(cleancss( ( { level: { 1: { specialComments: 0} }, format: 'beautify' } ) ) )
     //.pipe(concat('styles.css'))
-    .pipe(dest('preprod/css/')) // outputting to preprod
+    .pipe(dest('src/static_template/preprod/css/')) // outputting to preprod
     .pipe(browserSync.stream()) // adding watching w/o hard reload of page
 }
 
 function minifyImg() {
-    return src('src/img/**/*')
-    .pipe(newer('preprod/img/'))
+    return src('src/static_template/src/img/**/*')
+    .pipe(newer('src/static_template/preprod/img/'))
     .pipe(imagemin())
-    .pipe(dest('preprod/img/'))
+    .pipe(dest('src/static_template/preprod/img/'))
 }
 
 function cleanImg() {
-    return del('preprod/img/**/*', {force: true})
+    return del('src/static_template/preprod/img/**/*', {force: true})
 }
 
 function scripts() {
     return src([
-        'src/js/*.js'
+        'src/static_template/src/js/*.js'
     ])
     //.pipe(concat('scripts.js'))
-    .pipe(dest('preprod/js/')) // outputting to preprod
+    .pipe(dest('src/static_template/preprod/js/')) // outputting to preprod
     .pipe(browserSync.stream()) // adding watching w/o hard reload of page
 }
 
 function cleanprod() {
-    return del( 'public/**/*', {forced: true} )
+    return del( 'src/static_template/public/**/*', {forced: true} )
 }
 
 function buildjs() {
-    return src('preprod/js/*.js')
+    return src('src/static_template/preprod/js/*.js')
     .pipe(uglify())
-    .pipe(dest('public/js/'));
+    .pipe(dest('src/static_template/public/js/'));
 }
 
 function buildhtml() {
-    return src('preprod/*.html')
+    return src('src/static_template/preprod/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(dest('public/'));
+    .pipe(dest('src/static_template/public/'));
 }
 
 function buildcss() {
-    return src('preprod/css/*.css')
+    return src('src/static_template/preprod/css/*.css')
     .pipe(uglifycss({ 
         "maxLineLen": 80,
         "uglyComments": true 
     }))
-    .pipe(dest('public/css/'));
+    .pipe(dest('src/static_template/public/css/'));
 }
 
 function buildimg() {
-    return src('preprod/img/**/*')
-    .pipe(dest('public/img/'))
+    return src('src/static_template/preprod/img/**/*')
+    .pipe(dest('src/static_template/public/img/'))
 }
 
 function startwatch () {
-    watch( 'src/scss/*.scss', styles );
-    watch( 'src/pug/*.pug', compilePug );
-    watch( 'src/js/*.js', scripts );
-    watch( 'src/img/**/*', minifyImg );
+    watch( 'src/static_template/src/scss/*.scss', styles );
+    watch( 'src/static_template/src/pug/*.pug', compilePug );
+    watch( 'src/static_template/src/js/*.js', scripts );
+    watch( 'src/static_template/src/img/**/*', minifyImg );
 }
 
 exports.browsersync = browsersync;
