@@ -5,9 +5,22 @@
     position: absolute;
     top:0;
     left:0;
-    display: flex;
-    
+    display: flex; 
+    justify-content: center;   
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.8);
+    color: rgba(0,186,179,0.5);
+    & span {
+        font-family: $font-monospace;
+        font-size: $basic; 
+               
+    }
+    & span::after {
+        content: "LUKTELKITE";
+    }
 }
+
