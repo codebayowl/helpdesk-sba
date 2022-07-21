@@ -4,7 +4,6 @@ import MsgBlock from "./assets/blocks/MsgBlock";
 import Loader from './components/Loader';
 
 function App() {
-  let stillLoading = true;
   return (
     <div className="App"> 
       <LnkButton lnkAddr="#" lnkText="Link like a button" lnkType="success" />
