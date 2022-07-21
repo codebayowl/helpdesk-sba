@@ -8,10 +8,10 @@
     "url": "git+https://github.com/codebayowl/helpdesk-sba.git"
   },
   "keywords": [
-    "new",
-    "project",
-    "gulp",
-    "project"
+    "react",
+    "helpdesk",
+    "sba",
+    "faq"
   ],
   "author": "Strix Solitarius <codebayowl@gmail.com>",
   "license": "MIT",
