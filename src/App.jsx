@@ -8,7 +8,7 @@ function App() {
     <div className="App"> 
       <LnkButton lnkAddr="#" lnkText="Link like a button" lnkType="success" />
       <MsgBlock type="danger"/> 
-      <Loader /> 
+      {/* <Loader />  */}
     </div>
   );
 }
