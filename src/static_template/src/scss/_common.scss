@@ -280,3 +280,29 @@ button {
 		transform: translateX(-100px);
 	}
 }
+
+//---------- 2022-07-26----------------
+header {
+  background: $color-light;
+  display: flex;
+  flex-direction: row;
+}
+.block-mainlogo {
+  width: $basic * 5;
+  outline: $test;
+  background-image: url(../res/Utenostrikotazas.svg);
+}
+.mainMenu {
+  display: flex;
+  flex-direction: row;
+  
+}
+.mainMenuItem {
+  display: flex;
+  //outline: $test;
+}
+.mainMenuLink {
+  display:block;
+  color: $color-bg;
+  padding: $basic;
+}
