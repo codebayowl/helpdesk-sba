@@ -172,7 +172,7 @@ img {
   cursor: not-allowed;
 }
 .container {
-  display: block;
+  display: flex;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -194,7 +194,7 @@ body {
 	margin: 0;
 }
 input {
-	height: 32px;
+	//height: 32px;
 	margin:0;
 	padding: 0;
 	line-height: 32px;
@@ -203,7 +203,15 @@ input {
 		border-radius: 5px;
 		border: 1px solid $color-main;
 		margin: 10px 0 10px 10px;
-		width: 510px;
+		//width: 510px;
+		text-indent: .5em;
+	}
+  &[type=button] {
+		border-radius: 0 5px 5px 0;
+		border: 1px solid $color-main;
+		margin: 10px 10px 10px 0  ;
+    //padding: $basic;
+		//width: 510px;
 		text-indent: .5em;
 	}
 }
@@ -286,11 +294,25 @@ header {
   background: $color-light;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .block-mainlogo {
-  width: $basic * 5;
+  
   outline: $test;
-  background-image: url(../res/Utenostrikotazas.svg);
+}
+.block-mainmenu {
+  outline: $test;
+}
+.block-search {
+  outline: $test;
+}
+.block-login {
+  outline: $test;
+}
+.utLogo {
+  fill: $color-bg;
+  height: $basic * 3;
+  width: $basic * 3;
 }
 .mainMenu {
   display: flex;

@@ -16,11 +16,13 @@ img{width:100%;image-rendering:-webkit-optimize-contrast}.img-article{width:calc
 .success{background-color:rgba(0,132,15,.3);color:#00840f;border-color:#00840f;-webkit-box-shadow:0 4px 4px rgba(0,132,15,.2);box-shadow:0 4px 4px rgba(0,132,15,.2);text-decoration:line-through}
 .attention{background-color:rgba(220,140,0,.3);color:#dc8c00;border-color:#dc8c00;-webkit-box-shadow:0 4px 4px rgba(220,140,0,.2);box-shadow:0 4px 4px rgba(220,140,0,.2)}
 .disabled{background-color:rgba(233,234,236,.5);color:#c2c3c4;-webkit-box-shadow:0 4px 4px rgba(0,0,0,.1);box-shadow:0 4px 4px rgba(0,0,0,.1);cursor:not-allowed}
-.container{display:block;width:100%;margin:0 auto;overflow:hidden}@media screen and (min-width:721px) and (max-width:960px){.container{width:690px}
+.container{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;margin:0 auto;overflow:hidden}
+@media screen and (min-width:721px) and (max-width:960px){.container{width:690px}
 }@media screen and (min-width:961px) and (max-width:1280px){.container{width:930px}
 }@media screen and (min-width:1281px) and (max-width:1920px){.container{width:1250px}
 }@media screen and (min-width:1920px){.container{width:1880px}}body{padding:0;margin:0}
-input{height:32px;margin:0;padding:0;line-height:32px;font-size:16px}input[type=text]{border-radius:5px;border:1px solid #1f3948;margin:10px 0 10px 10px;width:510px;text-indent:.5em}
+input{margin:0;padding:0;line-height:32px;font-size:16px}input[type=text]{border-radius:5px;border:1px solid #1f3948;margin:10px 0 10px 10px;text-indent:.5em}
+input[type=button]{border-radius:0 5px 5px 0;border:1px solid #1f3948;margin:10px 10px 10px 0;text-indent:.5em}
 button{margin:10px 5px !important}#wrapper{width:100%;height:100vh}#canvas{width:600px;margin:0 auto;padding:10px}
 .item{position:relative;-webkit-animation:adding .3s ease-out;animation:adding .3s ease-out;margin:16px;padding:8px;border-left:4px solid;font-style:italic;border-radius:0 19px 19px 0}
 .submenu{width:28px;height:28px;position:absolute;right:7px;top:7px;border-radius:14px;padding:0;margin:0;text-align:center;color:inherit;border-color:inherit;background-color:transparent;-webkit-box-shadow:none;box-shadow:none;cursor:pointer}
@@ -30,8 +32,9 @@ to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes
 to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}.deletion{-webkit-animation:removal 1s;animation:removal 1s}
 @-webkit-keyframes removal{from{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}
 to{opacity:0;-webkit-transform:translateX(-100px);transform:translateX(-100px)}}@keyframes removal{from{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}
-to{opacity:0;-webkit-transform:translateX(-100px);transform:translateX(-100px)}}header{background:#127e9b;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
-.block-mainlogo{width:80px;outline:1px dotted #900;background-image:url(../res/Utenostrikotazas.svg)}
+to{opacity:0;-webkit-transform:translateX(-100px);transform:translateX(-100px)}}header{background:#127e9b;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.block-mainlogo{outline:1px dotted #900}.block-mainmenu{outline:1px dotted #900}.block-search{outline:1px dotted #900}
+.block-login{outline:1px dotted #900}.utLogo{fill:#e9eaec;height:48px;width:48px}
 .mainMenu{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .mainMenuItem{display:-webkit-box;display:-ms-flexbox;display:flex}.mainMenuLink{display:block;color:#e9eaec;padding:16px}
 #wrapper{width:100%;height:100%}
