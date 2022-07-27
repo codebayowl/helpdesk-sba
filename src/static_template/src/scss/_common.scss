@@ -171,6 +171,122 @@ img {
   box-shadow: 0 4px 4px rgba(0,0,0,.1);
   cursor: not-allowed;
 }
+
+.button {
+  display: inline-block;
+  vertical-align: top;
+  margin: math.div($basic, 4);
+  background-color: rgba(233,234,236,.3);
+  color: $color-main;
+  padding: 0 $basic;
+  border-radius: math.div($basic, 4);
+  border: 1px solid $color-neutral;
+  line-height: $basic * 2;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1);
+  transition: background-color .2s;
+  &:hover {
+    background-color: lighten($color-neutral, 10%);
+    box-shadow: 0 4px 6px rgba(0,0,0,.2);
+  }
+  &:active {
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    background-color: darken($color-neutral, 10%);
+  }
+}
+.btn-primary {
+  background-color: rgb(31,57,72);
+  color: $color-bg;
+  box-shadow: 0 4px 4px rgba(31,57,72,.2);
+  border-color: $color-dark;
+  &:hover {
+    background-color: $color-light;
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(18,126,155,.4);
+  }
+  &:active {
+    background-color: darken($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(18,126,155,.4);
+  }
+}
+.btn-danger {
+  background-color: rgba(153,0,0,.3);
+  color: $color-contrast;
+  border-color: $color-contrast;
+  box-shadow: 0 4px 4px rgba(153,0,0,.2);
+  &:hover {
+    background-color: lighten($color-contrast, 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(153,0,0,.4);
+  }
+  &:active {
+    background-color: darken($color-contrast, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(153,0,0,.4);
+  }
+}
+.btn-info {
+  background-color: rgba(18,126,155,.3);
+  color: $color-light;
+  border-color: $color-light;
+  box-shadow: 0 4px 4px rgba(18,126,155,.2);
+  //cursor: help;
+  &:hover {
+    background-color: lighten($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(18,126,155,.4);
+  }
+  &:active {
+    background-color: darken($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(18,126,155,.4);
+  }
+}
+.btn-success {
+  background-color: rgba(0,132,15,.3);
+  color: rgb(0,132,15);
+  border-color: rgb(0,132,15);
+  box-shadow: 0 4px 4px rgba(0,132,15,.2);
+  &:hover {
+    background-color: lighten(rgb(0,132,15), 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(0,132,15,.4);
+  }
+  &:active {
+    background-color: darken(rgb(0,132,15), 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(0,132,15,.4);
+  }
+}
+.btn-attention {
+  background-color: rgba(220,140,0,.3);
+  color: rgb(220,140,0);
+  border-color: rgb(220,140,0);
+  box-shadow: 0 4px 4px rgba(220,140,0,.2);
+  &:hover {
+    background-color: lighten(rgb(220,140,0), 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(220,140,0,.4);
+  }
+  &:active {
+    background-color: darken(rgb(220,140,0), 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(220,140,0,.4);
+  }
+}
+.btn-disabled {
+  background-color: rgba(233,234,236,.5);
+  color: $color-neutral;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1);
+  cursor: not-allowed;
+  &:hover, &:active {
+    background-color: rgba(233,234,236,.5);
+    color: $color-neutral;
+    box-shadow: 0 4px 4px rgba(0,0,0,.1);
+    cursor: not-allowed;
+  }
+}
+
 .container {
   display: flex;
   width: 100%;
@@ -195,24 +311,25 @@ body {
 }
 input {
 	//height: 32px;
-	margin:0;
-	padding: 0;
-	line-height: 32px;
+	margin: math.div($basic, 2);
+	padding: 0 $basic;
+  border: 1px solid $color-main;
+  border-radius: math.div($basic,4);
+	line-height: $basic * 2;
 	font-size: $basic;
+  //text-indent: .5em;
 	&[type=text] {
-		border-radius: 5px;
-		border: 1px solid $color-main;
-		margin: 10px 0 10px 10px;
+		//border-radius: 5px;
+		
+		//margin: 10px 0 10px 10px;
 		//width: 510px;
-		text-indent: .5em;
 	}
   &[type=button] {
-		border-radius: 0 5px 5px 0;
-		border: 1px solid $color-main;
-		margin: 10px 10px 10px 0  ;
+		//
+		
+		//margin: 10px 10px 10px 0  ;
     //padding: $basic;
 		//width: 510px;
-		text-indent: .5em;
 	}
 }
 button {
@@ -290,15 +407,34 @@ button {
 }
 
 //---------- 2022-07-26----------------
+#App {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
 header {
   background: $color-light;
+  flex-grow: 0;
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+}
+footer {
+  background-color: $color-bg;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
 .block-mainlogo {
-  
-  outline: $test;
+  margin: math.div($basic, 4);
+  //outline: $test;
 }
 .block-mainmenu {
   outline: $test;
