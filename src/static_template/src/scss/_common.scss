@@ -20,6 +20,7 @@ body {
   }
 }
 h1, h2, h3, h4, h5, h6 {
+  //display: block;
   font-family: $font-regular;
   color: $color-main;
   font-weight: bold;
@@ -163,12 +164,18 @@ img {
   color: $color-bg;
   box-shadow: 0 4px 4px rgba(31,57,72,.2);
   border-color: $color-dark;
+  & * {
+    color: $color-bg;
+  }
 }
 .danger {
   background-color: rgba(153,0,0,.3);
   color: $color-contrast;
   border-color: $color-contrast;
   box-shadow: 0 4px 4px rgba(153,0,0,.2);
+  & * {
+    color: $color-contrast;
+  }
 }
 .info {
   background-color: rgba(18,126,155,.3);
@@ -176,20 +183,27 @@ img {
   border-color: $color-light;
   box-shadow: 0 4px 4px rgba(18,126,155,.2);
 	text-decoration: none;
-  //cursor: help;
+  & * {
+    color: $color-light;
+  }
 }
 .success {
   background-color: rgba(0,132,15,.3);
   color: rgb(0,132,15);
   border-color: rgb(0,132,15);
   box-shadow: 0 4px 4px rgba(0,132,15,.2);
-	text-decoration: line-through;
+	& * {
+    color: rgb(0,132,15);
+  }
 }
 .attention {
   background-color: rgba(220,140,0,.3);
   color: rgb(220,140,0);
   border-color: rgb(220,140,0);
   box-shadow: 0 4px 4px rgba(220,140,0,.2);
+  & * {
+    color: rgb(220,140,0);
+  }
 }
 .disabled {
   background-color: rgba(233,234,236,.5);
@@ -319,7 +333,7 @@ input {
 	margin: math.div($basic, 2);
 	padding: 0 $basic;
   border: 1px solid $color-main;
-  border-radius: math.div($basic,4);
+  border-radius: math.div($basic, 4);
 	line-height: $basic * 2;
 	font-size: $basic;
   //text-indent: .5em;
@@ -349,14 +363,40 @@ button {
 	margin: 0 auto;
 	padding: 10px;
 }
-.item {
-	position: relative;
-	animation: adding .3s ease-out;
-  margin: $basic;
+.card-item {  
   padding: math.div($basic, 2);
+  margin: $basic;
   border-left: math.div($basic, 4) solid;
   font-style: italic;
 	border-radius: 0 19px 19px 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  @media screen and (min-width: 721px) and (max-width: 960px) {
+    width: $basic * 20;
+    margin: 0 $basic $basic 0;
+  }
+  @media screen and (min-width: 961px) and (max-width: 1280px) {
+    width: $basic * 25;
+    margin: 0 $basic $basic 0;
+  }
+  @media screen and (min-width: 1281px) and (max-width: 1920px) {
+    width: $basic * 24;
+    margin: 0 $basic $basic 0;
+  }
+  @media screen and (min-width: 1920px) {
+    width: $basic * 27;
+    margin: 0 $basic $basic 0;
+  }
+}
+.card-name {
+  font-size: $basic * 1.25;
+  line-height: $basic * 1.75;
+}
+.card-desc {  
+  text-align: left;
+  line-height: 1.25;
+  margin: 0;
+  text-indent: 0;
 }
 .submenu {
 	width: 28px;
@@ -466,12 +506,13 @@ section {
   width: 100%;
   flex-direction: column;
   flex-wrap: nowrap;
-  &:nth-child(even) {
-    background-color: rgba(18,126,155,.3);
-    color: $color-light;
-    border-color: $color-light;
-    box-shadow: 0 4px 4px rgba(18,126,155,.2);
-  }
+  padding: $basic 0;
+  //&:nth-child(even) {
+  //  background-color: rgba(18,126,155,.3);
+  //  color: $color-light;
+  //  border-color: $color-light;
+  //  box-shadow: 0 4px 4px rgba(18,126,155,.2);
+  //}
 }
 header, main, footer {
   display: flex;
@@ -495,8 +536,8 @@ main {
   justify-content: flex-start;
 }
 footer {
-  background-color: $color-bg;
-  margin-top: auto;  
+  
+  margin-top: auto;  // sticks footer to the bottom of the screen
 }
 .block-mainlogo {
   margin: math.div($basic, 4);

@@ -189,12 +189,18 @@ img {
   box-shadow: 0 4px 4px rgba(31,57,72,.2);
   border-color: #002a35
 }
+.primary * {
+  color: #e9eaec
+}
 .danger {
   background-color: rgba(153,0,0,.3);
   color: #900;
   border-color: #900;
   -webkit-box-shadow: 0 4px 4px rgba(153,0,0,.2);
   box-shadow: 0 4px 4px rgba(153,0,0,.2)
+}
+.danger * {
+  color: #900
 }
 .info {
   background-color: rgba(18,126,155,.3);
@@ -204,13 +210,18 @@ img {
   box-shadow: 0 4px 4px rgba(18,126,155,.2);
   text-decoration: none
 }
+.info * {
+  color: #127e9b
+}
 .success {
   background-color: rgba(0,132,15,.3);
   color: #00840f;
   border-color: #00840f;
   -webkit-box-shadow: 0 4px 4px rgba(0,132,15,.2);
-  box-shadow: 0 4px 4px rgba(0,132,15,.2);
-  text-decoration: line-through
+  box-shadow: 0 4px 4px rgba(0,132,15,.2)
+}
+.success * {
+  color: #00840f
 }
 .attention {
   background-color: rgba(220,140,0,.3);
@@ -218,6 +229,9 @@ img {
   border-color: #dc8c00;
   -webkit-box-shadow: 0 4px 4px rgba(220,140,0,.2);
   box-shadow: 0 4px 4px rgba(220,140,0,.2)
+}
+.attention * {
+  color: #dc8c00
 }
 .disabled {
   background-color: rgba(233,234,236,.5);
@@ -382,15 +396,51 @@ button {
   margin: 0 auto;
   padding: 10px
 }
-.item {
-  position: relative;
-  -webkit-animation: adding .3s ease-out;
-  animation: adding .3s ease-out;
-  margin: 16px;
+.card-item {
   padding: 8px;
+  margin: 16px;
   border-left: 4px solid;
   font-style: italic;
-  border-radius: 0 19px 19px 0
+  border-radius: 0 19px 19px 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1
+}
+@media screen and (min-width:721px) and (max-width:960px) {
+  .card-item {
+    width: 320px;
+    margin: 0 16px 16px 0
+  }
+}
+@media screen and (min-width:961px) and (max-width:1280px) {
+  .card-item {
+    width: 400px;
+    margin: 0 16px 16px 0
+  }
+}
+@media screen and (min-width:1281px) and (max-width:1920px) {
+  .card-item {
+    width: 384px;
+    margin: 0 16px 16px 0
+  }
+}
+@media screen and (min-width:1920px) {
+  .card-item {
+    width: 432px;
+    margin: 0 16px 16px 0
+  }
+}
+.card-name {
+  font-size: 20px;
+  line-height: 28px
+}
+.card-desc {
+  text-align: left;
+  line-height: 1.25;
+  margin: 0;
+  text-indent: 0
 }
 .submenu {
   width: 28px;
@@ -558,14 +608,8 @@ section {
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap
-}
-section:nth-child(even) {
-  background-color: rgba(18,126,155,.3);
-  color: #127e9b;
-  border-color: #127e9b;
-  -webkit-box-shadow: 0 4px 4px rgba(18,126,155,.2);
-  box-shadow: 0 4px 4px rgba(18,126,155,.2)
+  flex-wrap: nowrap;
+  padding: 16px 0
 }
 footer,
 header,
@@ -610,7 +654,6 @@ main {
   justify-content: flex-start
 }
 footer {
-  background-color: #e9eaec;
   margin-top: auto
 }
 .block-mainlogo {
