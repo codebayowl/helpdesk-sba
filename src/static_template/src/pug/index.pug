@@ -4,7 +4,7 @@ html(lang="en")
 	body
 		#App
 			header
-				.container 				
+				.adaptiveContainer.horiz.nowrap
 					.block-mainlogo 
 						svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3600 4000"	height="40mm" width="36mm").utLogo
 							path(d="m 1800,744.77775 c -29.0267,0 -56.602,4.354 -84.1774,14.51334 -317.8421,110.30136 -654.5515,384.60341 -808.39294,586.33881 -162.5494,211.8948 -174.16,496.3562 -174.16,876.6056 0,284.4614 1.4513,587.7902 71.1153,756.1449 78.372,188.6734 432.49754,287.3641 994.16364,287.3641 673.4189,0 921.597,-134.9741 994.1637,-287.3641 39.186,-82.726 52.248,-219.1514 62.4073,-368.6388 -47.894,69.664 -204.638,214.7974 -445.5594,281.5588 -240.9214,66.7613 -461.5242,58.0533 -690.8349,1.4513 -193.0274,-46.4427 -358.4794,-140.7794 -480.3915,-301.8774 -164.0007,-217.7001 -219.1514,-462.9755 -165.452,-730.0209 49.3453,-248.1781 175.6114,-445.5594 404.9221,-564.5688 133.5227,-69.664 269.9481,-101.5934 420.8868,-69.664 156.744,33.3806 278.6561,120.4607 367.1874,249.6294 72.5667,107.3986 105.9474,227.8593 91.434,358.4794 -11.6106,117.558 -58.0533,219.1514 -134.974,307.6827 -76.9207,88.5314 -185.7707,152.3901 -291.7181,140.7794 -134.974,-14.5133 -197.3814,-181.4167 -108.85,-267.0454 36.2833,-34.832 81.2747,-56.602 126.266,-78.372 40.6374,-18.8674 68.2127,-49.3454 79.8234,-92.8854 33.3807,-114.6553 -44.9914,-258.3374 -164.0007,-291.718 -126.2661,-34.832 -232.2134,15.9646 -323.6475,97.2393 -105.9473,92.8854 -150.9387,219.1514 -162.5493,355.5768 -30.4781,367.1874 267.0454,611.0115 671.9675,611.0115 486.1968,-1.4514 834.5169,-351.2228 799.6849,-796.7823 -18.8674,-190.1247 -62.4074,-346.8687 -161.0981,-476.0374 -153.8413,-201.7354 -489.0994,-476.03748 -808.3929,-586.33885 -26.124,-8.708 -55.1506,-14.51333 -84.1773,-14.51333 z m 0,-291.71808 c -60.956,0 -121.9121,10.15933 -179.9654,30.478 C 1244.1392,614.15771 860.98696,927.6458 676.66766,1168.5672 460.4189,1453.0286 443.0029,1798.446 441.5516,2222.2355 c 0,378.7981 15.9647,670.5162 91.434,863.5436 65.31,164.0007 179.96536,267.0454 393.31146,354.1254 v 0 c 98.69074,40.6374 345.41744,108.85 872.25154,108.85 526.8342,0 772.1096,-68.2126 872.2516,-108.85 214.7974,-87.08 329.4528,-190.1247 393.3115,-354.1254 76.9207,-193.0274 92.8853,-484.7455 91.434,-863.5436 0,-423.7895 -17.416,-770.6582 -235.1161,-1053.6683 -184.3194,-240.9214 -567.4715,-552.95816 -943.3669,-685.02953 -58.0534,-20.31867 -119.0094,-30.478 -179.9654,-30.478 z m 0,3399.02363 c -303.3288,0 -721.3129,-23.2213 -986.90704,-130.62 v 0 C 519.9236,3602.4539 347.2149,3441.3558 249.97553,3197.5318 155.63884,2958.0617 136.7715,2647.4763 136.7715,2222.2355 c 0,-378.7981 0,-850.4816 297.5234,-1239.43904 206.08936,-268.49672 632.7815,-629.87882 1085.5977,-788.0742 179.9653,-62.40735 378.7981,-62.40735 560.2148,0 452.8161,158.19538 880.9596,518.12615 1085.5976,788.0742 297.5235,388.95744 297.5235,860.64094 297.5235,1239.43904 0,425.2408 -18.8674,737.2775 -113.2041,975.2963 -97.2393,243.824 -269.9481,404.9221 -563.1175,523.9315 -265.594,107.3987 -683.5782,130.62 -986.9069,130.62 z")
@@ -20,18 +20,29 @@ html(lang="en")
 								a(href="#").mainMenuLink Main
 							li.mainMenuItem
 								a(href="#").mainMenuLink Main
-					.block-search
-						input(type="text" placeholder="Search")
-					.block-login
-						input(type="button" value="Login" onclick="console.log('clicked');").btn-primary
+					.block-additional.horis.nowrap
+						.block-search
+							input(type="text" placeholder="Search")
+						.block-login
+							input(type="button" value="Login" onclick="console.log('clicked');").btn-primary
 			main
-				.container
-					section#about.item.info
-						h1 Information popup
-						p for Pug and Scss (operated by Gulp)
-						a(href="#").button.btn-primary ...want to know more? 
+				
+				section
+					article.adaptiveContainer
+						p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae iure velit exercitationem voluptatem magnam, omnis culpa quo ut illo deserunt amet excepturi nostrum iusto, laudantium beatae ratione possimus maxime. Totam adipisci laboriosam itaque officiis? Excepturi, quia dolores. Eius a perspiciatis placeat ratione explicabo qui laborum laudantium eum, veritatis, illum delectus?
+					//- .rope
+				section
+					article.adaptiveContainer
+						p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae iure velit exercitationem voluptatem magnam, omnis culpa quo ut illo deserunt amet excepturi nostrum iusto, laudantium beatae ratione possimus maxime. Totam adipisci laboriosam itaque officiis? Excepturi, quia dolores. Eius a perspiciatis placeat ratione explicabo qui laborum laudantium eum, veritatis, illum delectus?
+				section
+					article.adaptiveContainer
+						p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae iure velit exercitationem voluptatem magnam, omnis culpa quo ut illo deserunt amet excepturi nostrum iusto, laudantium beatae ratione possimus maxime. Totam adipisci laboriosam itaque officiis? Excepturi, quia dolores. Eius a perspiciatis placeat ratione explicabo qui laborum laudantium eum, veritatis, illum delectus?
+				section
+					article.adaptiveContainer
+						p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae iure velit exercitationem voluptatem magnam, omnis culpa quo ut illo deserunt amet excepturi nostrum iusto, laudantium beatae ratione possimus maxime. Totam adipisci laboriosam itaque officiis? Excepturi, quia dolores. Eius a perspiciatis placeat ratione explicabo qui laborum laudantium eum, veritatis, illum delectus?
+					
 			footer
-				.container 
+				.adaptiveContainer.horis.nowrap
 					p Lorem ipsum dolor sit, amet consectetur adipisicing elit. At, amet delectus. Necessitatibus consequuntur dolore pariatur ad repellendus, vel voluptatum cum.
 			
 		script(src="js/scripts.js")

@@ -4,6 +4,9 @@ a, p, h1, h2, h3, h4, h5, h6, blockquote {
   font-size: $basic;
 }
 // E N V I R O N M E N T
+html, body {
+  height: 100%;
+}
 html {
   font-size: $basic;
 }
@@ -49,8 +52,10 @@ h6 {
   font-size: $basic;
 }
 p {
-  text-align: left;
-  line-height: 1;
+  text-align: justify;
+  line-height: 1.5;
+  margin: $basic;
+  text-indent: $basic;
 }
 blockquote {
   color: $color-light;
@@ -68,11 +73,7 @@ a {
     color: $color-contrast;
   }
 }
-section {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-}
+
 select {
   display: block;
   margin: 1mm;
@@ -131,6 +132,31 @@ img {
 }
 .thumb-320 {
   width: 288px;
+}
+.rope {
+  display: block;
+  margin: 0 auto;
+  width: 116px;
+  height: 42px;
+  background: url(https://raw.githubusercontent.com/Skidan/aivazovsky/master/img/knot-colormain.png) center center no-repeat;
+  &::before, &::after {
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    content: "";
+    height: 42px;
+    
+  }
+  &::before {
+    left: 40px;
+    width: calc(50% - 98px);
+    background: url(https://raw.githubusercontent.com/Skidan/aivazovsky/master/img/rope-colormain.png) right center repeat-x;    
+  }
+  &::after {
+    right: 40px;
+    width: calc(50% - 98px);
+    background: url(https://raw.githubusercontent.com/Skidan/aivazovsky/master/img/rope-colormain.png) left center repeat-x;
+  }
 }
 .primary {
   background-color: rgb(31,57,72);
@@ -287,28 +313,7 @@ img {
   }
 }
 
-.container {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  @media screen and (min-width: 721px) and (max-width: 960px) {
-    width: 690px;
-  }
-  @media screen and (min-width: 961px) and (max-width: 1280px) {
-    width: 930px;
-  }
-  @media screen and (min-width: 1281px) and (max-width: 1920px) {
-    width: 1250px;
-  }
-  @media screen and (min-width: 1920px) {
-    width: 1880px;
-  }
-}
-body {
-	padding: 0;
-	margin: 0;
-}
+
 input {
 	//height: 32px;
 	margin: math.div($basic, 2);
@@ -407,43 +412,117 @@ button {
 }
 
 //---------- 2022-07-26----------------
+.measures {
+  outline: 1px dashed blue;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+.adaptiveContainer {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  @media screen and (min-width: 721px) and (max-width: 960px) {
+    width: 690px;
+  }
+  @media screen and (min-width: 961px) and (max-width: 1280px) {
+    width: 930px;
+  }
+  @media screen and (min-width: 1281px) and (max-width: 1920px) {
+    width: 1250px;
+  }
+  @media screen and (min-width: 1920px) {
+    width: 1880px;
+  }
+}
+.horis {
+  flex-direction: row;
+}
+.vert {
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.nowrap {
+  flex-wrap: nowrap;
+}
+.centerh {
+  justify-content: center;
+}
+.centerv {
+  align-items: center;
+}
+
 #App {
   display: flex;
+  flex-basis: 100%;
   flex-direction: column;
   flex-wrap: nowrap;
 }
-header {
-  background: $color-light;
+section {
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  &:nth-child(even) {
+    background-color: rgba(18,126,155,.3);
+    color: $color-light;
+    border-color: $color-light;
+    box-shadow: 0 4px 4px rgba(18,126,155,.2);
+  }
+}
+header, main, footer {
+  display: flex;
   flex-grow: 0;
   flex-shrink: 0;
-  display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
-main {
-  display: flex;
-  flex-grow: 1;
-  flex-shrink: 1;
+  align-items: center;
+  justify-content: center;
 
+  //outline: 1px dotted yellow;
+}
+header {
+  background: $color-light;
+  //justify-content: space-between;
+}
+main {  
+  flex-grow: 3;
+  flex-shrink: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 footer {
   background-color: $color-bg;
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
+  margin-top: auto;  
 }
 .block-mainlogo {
   margin: math.div($basic, 4);
-  //outline: $test;
+  flex-grow: 0;
+  flex-shrink: 0;
+  order: 1;
 }
 .block-mainmenu {
-  outline: $test;
+  //outline: $test;
+  flex-grow: 3;
+  flex-shrink: 0;
+  order: 2;
+}
+.block-additional {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  order: 3;
 }
 .block-search {
-  outline: $test;
+  //outline: $test;
+  order: 1;
 }
 .block-login {
-  outline: $test;
+  //outline: $test;
+  order: 2;
 }
 .utLogo {
   fill: $color-bg;
