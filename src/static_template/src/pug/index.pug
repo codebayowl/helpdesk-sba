@@ -13,44 +13,51 @@ html(lang="en")
 							li.mainMenuItem
 								a(href="#").mainMenuLink Main
 							li.mainMenuItem
-								a(href="#").mainMenuLink Kolegos / duomenys
+								a(href="#").mainMenuLink Instrukijos
 							li.mainMenuItem
 								a(href="#").mainMenuLink DUK
 							li.mainMenuItem
-								a(href="#").mainMenuLink Main
+								a(href="#").mainMenuLink Kolegos
 							li.mainMenuItem
-								a(href="#").mainMenuLink Main
+								a(href="#").mainMenuLink Zemelapis
 					.block-additional.horis.nowrap
 						.block-search
 							input(type="text" placeholder="Search")
 						.block-login
 							input(type="button" value="Login" onclick="console.log('clicked');").btn-primary
 			main
+				section 
+					article.adaptiveContainer.horis.nowrap.danger
+						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sunt autem non eaque similique perspiciatis eveniet accusamus necessitatibus dolor eos!
+				section
+					h2.adaptiveContainer Naujenos 
+					article.adaptiveContainer.horis.nowrap
+						p Lorem ipsum dolor sit amet.
 				
 				section
 					h2.adaptiveContainer Instrukcijos
 					article.adaptiveContainer.horis.wrap 						
 						a(href="#").card-item.info
 							h3.card-name Informacines sistemos 
-							p.card-desc Informaciniu sistemu aprasymai bei ypatybes ir daug visokiausio slamsto
+							p.card-desc Informaciniu sistemu aprasymai bei ypatybes
 						a(href="#").card-item.danger
 							h3.card-name COVID taisykles 
-							p.card-desc Informaciniu sistemu aprasymai bei ypatybes ir daug visokiausio slamsto
+							p.card-desc Informaciniu sistemu aprasymai bei ypatybes 
 						a(href="#").card-item.success
-							h3.card-name Civiline atsakomybe 
-							p.card-desc Informaciniu sistemu aprasymai bei ypatybes ir daug visokiausio slamsto ir dar iki apsisikimo texto prideta kad netilptu i viena korta
+							h3.card-name Socialine atsakomybe 
+							p.card-desc Informaciniu sistemu aprasymai bei ypatybes 
 						a(href="#").card-item.attention
 							h3.card-name Darbo vietu instrukcijos
-							p.card-desc Informaciniu sistemu aprasymai bei ypatybes ir daug visokiausio slamsto
+							p.card-desc Informaciniu sistemu aprasymai bei ypatybes 
 						a(href="#").card-item.primary
 							h3.card-name Darbinio proceso aprasymai 
-							p.card-desc Informaciniu sistemu aprasymai bei ypatybes ir daug visokiausio slamsto
+							p.card-desc Informaciniu sistemu aprasymai bei ypatybes 
 					
 				section
 					h2.adaptiveContainer Ieskome nauju kolegu
 					article.adaptiveContainer
 						p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae iure velit exercitationem voluptatem magnam, omnis culpa quo ut illo deserunt amet excepturi nostrum iusto, laudantium beatae ratione possimus maxime. Totam adipisci laboriosam itaque officiis? Excepturi, quia dolores. Eius a perspiciatis placeat ratione explicabo qui laborum laudantium eum, veritatis, illum delectus?
-					.rope
+					.adaptiveContainer.rope
 				section
 					h2.adaptiveContainer Musu vertybes
 					article.adaptiveContainer
@@ -61,6 +68,6 @@ html(lang="en")
 					
 			footer.primary
 				.adaptiveContainer.horis.nowrap.centerh
-					p Utenos Trikotazas 2022
+					p Utenos Trikotazas &copy; 2022
 			
 		script(src="js/scripts.js")
