@@ -646,6 +646,88 @@ main {
 header {
   background: #127e9b
 }
+header .block-mainlogo {
+  margin: 4px;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1
+}
+header .block-mainmenu {
+  -webkit-box-flex: 3;
+  -ms-flex-positive: 3;
+  flex-grow: 3;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2
+}
+header .block-additional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3
+}
+header .block-search {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1
+}
+header .block-login {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2
+}
+header .utLogo {
+  fill: #e9eaec;
+  height: 48px;
+  width: 48px
+}
+header .mainMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row
+}
+header .mainMenuItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+header .mainMenuLink {
+  display: block;
+  color: #e9eaec;
+  padding: 16px
+}
+@media screen and (max-width:720px) {
+  header {
+    background: red
+  }
+  header .adaptiveContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  header .block-mainlogo {
+    display: none
+  }
+}
 main {
   -webkit-box-flex: 3;
   -ms-flex-positive: 3;
@@ -665,74 +747,6 @@ main {
 }
 footer {
   margin-top: auto
-}
-.block-mainlogo {
-  margin: 4px;
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1
-}
-.block-mainmenu {
-  -webkit-box-flex: 3;
-  -ms-flex-positive: 3;
-  flex-grow: 3;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2
-}
-.block-additional {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-box-ordinal-group: 4;
-  -ms-flex-order: 3;
-  order: 3
-}
-.block-search {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1
-}
-.block-login {
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2
-}
-.utLogo {
-  fill: #e9eaec;
-  height: 48px;
-  width: 48px
-}
-.mainMenu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row
-}
-.mainMenuItem {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex
-}
-.mainMenuLink {
-  display: block;
-  color: #e9eaec;
-  padding: 16px
 }
 #App {
   width: 100%;

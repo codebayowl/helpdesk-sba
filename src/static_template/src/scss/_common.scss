@@ -531,10 +531,66 @@ header, main, footer {
 
   //outline: 1px dotted yellow;
 }
+
 header {
-  background: $color-light;
-  //justify-content: space-between;
+  background: $color-light;  
+  & .block-mainlogo {
+    margin: math.div($basic, 4);
+    flex-grow: 0;
+    flex-shrink: 0;
+    order: 1;
+  }
+  & .block-mainmenu {
+    //outline: $test;
+    flex-grow: 3;
+    flex-shrink: 0;
+    order: 2;
+  }
+  & .block-additional {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    order: 3;
+  }
+  & .block-search {
+    //outline: $test;
+    order: 1;
+  }
+  & .block-login {
+    //outline: $test;
+    order: 2;
+  }
+  & .utLogo {
+    fill: $color-bg;
+    height: $basic * 3;
+    width: $basic * 3;
+  }
+  & .mainMenu {
+    display: flex;
+    flex-direction: row;
+    
+  }
+  & .mainMenuItem {
+    display: flex;
+    //outline: $test;
+  }
+  & .mainMenuLink {
+    display:block;
+    color: $color-bg;
+    padding: $basic;
+  }
+
+  @media screen and (max-width: 720px) {
+    background: red; 
+    & .adaptiveContainer {
+      flex-direction: column;
+    }
+    & .block-mainlogo {
+      display: none;
+    }
+  }
 }
+
 main {  
   flex-grow: 3;
   flex-shrink: 1;
@@ -546,48 +602,6 @@ footer {
   
   margin-top: auto;  // sticks footer to the bottom of the screen
 }
-.block-mainlogo {
-  margin: math.div($basic, 4);
-  flex-grow: 0;
-  flex-shrink: 0;
-  order: 1;
-}
-.block-mainmenu {
-  //outline: $test;
-  flex-grow: 3;
-  flex-shrink: 0;
-  order: 2;
-}
-.block-additional {
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
-  order: 3;
-}
-.block-search {
-  //outline: $test;
-  order: 1;
-}
-.block-login {
-  //outline: $test;
-  order: 2;
-}
-.utLogo {
-  fill: $color-bg;
-  height: $basic * 3;
-  width: $basic * 3;
-}
-.mainMenu {
-  display: flex;
-  flex-direction: row;
-  
-}
-.mainMenuItem {
-  display: flex;
-  //outline: $test;
-}
-.mainMenuLink {
-  display:block;
-  color: $color-bg;
-  padding: $basic;
-}
+
+
+
