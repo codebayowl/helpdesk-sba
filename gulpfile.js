@@ -62,7 +62,7 @@ function scripts() {
     return src([
         'src/static_template/src/js/*.js'
     ])
-    //.pipe(concat('scripts.js'))
+    .pipe(concat('scripts.js'))
     .pipe(dest('src/static_template/preprod/js/')) // outputting to preprod
     .pipe(browserSync.stream()) // adding watching w/o hard reload of page
 }
