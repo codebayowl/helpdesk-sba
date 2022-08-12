@@ -9,4 +9,4 @@ function rotate() {
 	document.querySelector(".teaser-details").classList.toggle("height-details-expanded");
 	console.log("Height operations performed");
 };
-document.querySelector(".iwantmore").addEventListener("click", rotate);
+//document.querySelector(".iwantmore").addEventListener("click", rotate);

@@ -1,0 +1,12 @@
+footer { 
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  //outline: 1px dotted yellow; 
+  margin-top: auto;  // sticks footer to the bottom of the screen
+}
+  
